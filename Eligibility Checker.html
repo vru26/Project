@@ -1,0 +1,207 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        
+<style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        input[type=text], select, textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          resize: vertical;
+        }
+        input[type=number] {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          resize: vertical;
+        }
+        
+        label {
+          padding: 12px 12px 12px 0;
+          display: inline-block;
+        }
+        
+        input[type=submit] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          float: right;
+        }
+        
+        .button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  float: right;
+}
+
+.button:hover {
+  background-color: green;
+}
+        
+        .container {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+        }
+        
+        .col-25 {
+          float: left;
+          width: 25%;
+          margin-top: 6px;
+        }
+        
+        .col-75 {
+          float: left;
+          width: 75%;
+          margin-top: 6px;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .col-25, .col-75, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+          }
+        }
+        </style>
+
+
+
+
+
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+            </script>
+<script>
+            $(document).ready(function(){
+        $("#btn-bikes").click(function(){
+             var BIKES = new Array("Gearless","Sports-Bike","Touring","Cruiser");
+                $("#dropdown").find('option').remove();
+                for(i=0; i < BIKES.length; i++){
+                     $("#dropdown").append('<option value="'+BIKES[i]+'">'+BIKES[i]+'</option>');
+                 }
+        });
+        $("#btn-cars").click(function(){
+              var CARS = new Array("Ford","Honda","Toyota","Suzuki");
+                  $("#dropdown").find('option').remove();
+                  for(i=0; i < CARS .length; i++){
+                      $("#dropdown").append('<option value="'+CARS [i]+'">'+CARS [i]+'</option>');
+                   }
+         });
+ 
+
+
+});
+
+function myFunction() {
+    alert("Congratulations!!!! You are eligible for Loan");
+  document.getElementById("#emi-calc").disabled = false;
+}
+            </script>
+    </head>
+<body> 
+    <h1> Eligiblity Checker </h1>
+    <form>
+            <div class="row"><div class="container">
+                   
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="Loan For:">Loan For:</label>
+                      </div>
+                      <div class="col-75">
+                            <input type="radio" name="vehicle" value="Bike" id="btn-bikes"> Bike
+                            <input type="radio" name="vehicle" value="Car" id="btn-cars"> Car
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="vtype"> Vehicle Type:  </label>
+                      </div>
+                      <div class="col-75">
+                            <select id = "dropdown" required> 
+                                </select>                      </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="col-25">
+                            <label for="lname">Loan Amount</label>
+                          </div>
+                          <div class="col-75">
+                            <input type="text" id="lname" name="loanAmount" placeholder="Please specify Loan Amount" required>
+                          </div>
+                        </div>
+
+                          <div class="row">
+                          <div class="col-25">
+                                <label for="annualsal">Annual Salary</label>
+                              </div>
+                              <div class="col-75">
+                                <input type="number" id="lname" name="lastname" placeholder="Please specify your Annual Salary" required>
+                              </div>
+                            </div>
+
+                              <div class="row">
+                                    <div class="col-25">
+                                    <label for="lname">Experience in current firm </label>
+                                  </div>
+                                  <div class="col-75">
+                                    <input type="text" id="lname" name="lastname" placeholder="Please specify Experience in current firm (in years)"required>
+                                  </div>
+                                </div>
+
+                                  <div class="row">
+                                  <div class="col-25">
+                                        <label for="lname">Any Existing loan  </label>
+                                      </div>
+                                      <div class="col-75">
+                                            <input type="radio" name="existingLoan" checked> No
+                                            <input type="radio" name="existingLoan"> Yes
+                                                        </div>
+                                                    </div>
+
+                    <div class="row">
+                            <button class="chk-eligibility" onclick="myFunction()">Check Loan Eligibility</button> <br><br>
+
+                    </div><br><br>
+
+                    <div class="row">
+                            <button class="emi-calc" disabled >EMI Calculator</button>
+
+                          </div>
+                    
+                  </div>
+                  <button class="btn1">Hide</button>
+
+
+                </form>
+            
+        
+    
+          
+    
+
+     
+  
+</body> 
+</html> 
